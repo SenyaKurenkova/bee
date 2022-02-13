@@ -5,453 +5,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="acordeon.js"></script>
+	<link href="main.css" rel="stylesheet">
 	<title>Главная</title>
-	<style type="text/css">
-		   @import url('https://fonts.googleapis.com/css2?family=Jost');
-		body {
-			margin: 0px;
-		}
-		header {
-			border-bottom: 1px;
-			border-bottom-color: rgba(215, 215, 215, 0.1);
-			border-bottom-style: inset;
-			background: #2B2C3A;
-		}
-		.item_header {
-			display: flex;
-			height: 71px;
-			margin: 0px;
-			background-color: #2B2C3A;
-			border-bottom: 1px;
-			border-color: #D8D8D8;
-		}
-		.item_header_left {
-			background-color: #303242;
-			width: 281px;
-			min-width: 281px;
-		}
-		.item_header_center {
-			min-width: 302px;
-		}
-		.item_header_right {
-			display: flex;
-			margin-left: auto;
-			margin-right: 45px;
-			min-width: 600px;
-		}
-		.item_body {
-			display: flex;
-			margin: 0px;
-			background-color: #2B2C3A;
-		}
-		.item_body_left {
-			background-color: #303242;
-			width: 281px;
-			height: calc(100vh - 71px);
-			min-width: 281px;
-		}
-		.item_body_right {
-			height: calc(100vh - 71px);
-			width: calc(100vw - 281px);
-			min-width: 415px;
-		}
-		.logo {
-			padding-top: 16px;
-			padding-left: 30px;
-			padding-bottom: 15px;
-		}
-		.menu-top {
-			padding-left: 54px;
-			padding-top: 10px;
-			display: flex;
-			list-style-type: none;
-/*			top: calc(50% - 10px/2 - 7px); */
-		}
-		.menu-top a {
-			padding-right: 28px;
-			font-family: 'Jost', sans-serif;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 14px;
-			line-height: 10px;
-			color: #FFFFFF;
-			mix-blend-mode: normal;
-			opacity: 0.6;
-			text-decoration: none;
-		}
-		.last-item-menu-top {
-			border-right: 1px solid #D8D8D8;
-			opacity: 0.1;
-			padding-right: 28px;
-		}
-		.menu-top_user {
-			padding-top: 10px;
-			display: flex;
-			list-style-type: none;
-/*			top: calc(50% - 10px/2 - 7px); */
-		}
-		.menu-top_user a {
-			padding-right: 28px;
-			font-family: 'Jost', sans-serif;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 14px;
-			line-height: 10px;
-			color: rgba(255, 255, 255);
-			text-decoration: none;
-			background: rgba(255, 255, 255, 0.06);
-			mix-blend-mode: normal;
-			border-radius: 5px;
-			margin: 10px;
-			padding: 7px 9px;
-		}
-		.menu-top_user b {
-			color: rgba(255, 255, 255);
-		}
-		.icon_1 {
-			background: #FF4738;
-			box-shadow: 0px 0px 12px rgba(255, 71, 56, 0.5);
-			border-radius: 4px;
-			padding: 3px 6px;
-			margin-top: -3px;
-			margin-bottom: -3px;
-			margin-left: -3px;
-			margin-right: 10px;
-		}
-		.ava {
-			height: 44px;
-			padding-top: 14px;
-			padding-left: 14px;
-		}
-		.menu-top_user_name {
-			padding-left: 13px;
-			padding-top: 22px;
-			font-family: 'Jost', sans-serif;
-			font-size: 14px;
-			line-height: 17px;
-			font-style: normal;
-			font-weight: normal;
-			color: #FFFFFF;
-		}
-		.status {
-			background: linear-gradient(90deg, #6B69F9 0%, #6F6EFF 100%);
-			box-shadow: 0px 0px 12px rgba(111, 110, 255, 0.5);
-			border-radius: 4px;
-			font-family: 'Jost', sans-serif;
-			font-size: 11px;
-			color: #FFFFFF;
-			padding: 2px 8px;
-			margin-top: 22px;
-			margin-bottom: auto;
-			margin-left: 15px;
-		}
-/* МЕНЮ */
-		ul#menu, ul#menu ul {
-		 list-style-type:none;
-		 padding-left: 0px;
-		}
-		ul#menu a {
-		 display: block;
-		 text-decoration: none;  
-		}
-
-		ul#menu li {
-		 margin-top: 1px;
-		}
-
-		ul#menu li a img {
-		 vertical-align: middle;
-		 padding: 0 5px 5px 0;
-		}
-
-		ul#menu li a {
-		 -webkit-transition: 0.1s;
-		 -moz-transition: 0.1s;
-		 transition: 0.1s;
-		 font-family: 'Jost', sans-serif;
-		 font-size: 14px;
-		 color: #FFFFFF;
-		}
-
-		ul#menu li a:hover {
-		 background: rgba(255, 255, 255, 0.03);
-		}
-		.top-line {
-			padding-left: 30px;
-			padding-bottom: 13px;
-			padding-top: 13px;
-		}
-		.top-line_1 {
-			padding-left: 30px;
-			padding-bottom: 13px;
-			padding-top: 13px;
-		}
-		.next-line {
-			padding-left: 50px;
-			padding-bottom: 15px;
-			padding-top: 15px;
-		}
-		.next-line:hover {
-			border-left: 5px inset rgba(111, 110, 255, 1);
-		}
-		.next-line a:active {
-			border-left: 5px inset rgba(111, 110, 255, 1);
-		}
-		.content {
-			margin-top: 40px;
-			margin-left: 55px;
-			display: flex;
-			max-width: 1106px;
-		}
-		.content2 {
-			margin-top: 352px;
-			margin-left: 55px;
-			display: flex;
-			max-width: 1106px;
-		}
-		.blok-name {
-		}
-		.block-carousel {
-			margin-left: auto;
-			margin-right: 55px;
-			display: flex;
-		}
-		.leval-name {
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 11px;
-			line-height: 16px;
-			color: rgba(255, 255, 255, 0.4);
-			margin-bottom: 7px;
-
-		}
-		.courses-name {
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 22px;
-			line-height: 18px;
-			color: #FFFFFF;
-			margin-top: 0px;
-		}
-		.all-courses {
-			padding: 7px 12px;
-			background: linear-gradient(90deg, #6B69F9 0%, #6F6EFF 100%);
-			border-radius: 4px;
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 12px;
-			line-height: 17px;
-			color: #FFFFFF;
-			text-decoration: none;
-		}
-		.arrow {
-			mix-blend-mode: normal;
-			border: 1px solid rgba(255, 255, 255, 0.15);
-			box-sizing: border-box;
-			border-radius: 4px;
-			padding: 10px 12px;
-			margin-top: -6px;
-		}
-		.label p {
-			background: #6F6EFF;
-			border-radius: 3px;
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 12px;
-			color: #FFFFFF;
-			padding: 4px 6px;
-			position: absolute;
-			margin: 14px;
-		}
-		.blog {
-			background: rgba(255, 255, 255, 0.04);
-			width: 255px;
-			height: 294px;
-			border-radius: 6px;
-			margin-right: 11px;
-		}
-		.blog h2 {
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 16px;
-			line-height: 12px;
-			position: relative;
-			top: 15px;
-			left: 15px;
-			color: #FFFFFF;
-			margin: 0px;
-		}
-		.blog h3 {
-			position: relative;
-			top: 25px;
-			left: 15px;
-			font-family: Jost;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 14px;
-			line-height: 18px;
-			color:  rgba(255, 255, 255, 0.5);
-			margin: 0px;
-		}
-		.blog hr {
-			position: absolute;
-			top: 233px;
-			width: 255px;
-			border: 0.5px solid rgba(216, 216, 216, 0.1);
-			margin: 0px;
-		}
-		.blog font {
-			font-family: Jost;
-			font-size: 13px;
-			color: #FFFFFF;
-			top: 75px;
-			line-height: 10px;
-			position: absolute;
-			top: 258px;
-			padding-left: 15px;
-		}
-		.img-blog {
-			width: 255px;
-			height: 144px;
-			border-radius: 6px 6px 0px 0px;
-		}
-		.watch {
-			background: linear-gradient(90deg, #6B69F9 0%, #6F6EFF 100%);
-			border-radius: 4px;
-			font-size: 13px;
-			font-family: Jost;
-			color: #FFFFFF;
-			padding: 10px 19px;
-			line-height: 10px;
-			position: absolute;
-			top: 247px;
-			text-decoration: none;
-			margin-left: 150px;
-		}
-/* Rounded sliders */
-		.switch {
-		  position: absolute;
-		  display: inline-block;
-		  width: 51px;
-		  height: 26px;
-		  top: calc(100vh - 57px);
-		  left: 190px;
-		}
-
-		.switch input { 
-		  opacity: 0;
-		  width: 0;
-		  height: 0;
-		}
-
-		.slider {
-		  position: absolute;
-		  cursor: pointer;
-		  top: 0;
-		  left: 0;
-		  right: 0;
-		  bottom: 0;
-		  background-color: rgba(111, 110, 255, 0);
-		  -webkit-transition: .4s;
-		  transition: .4s;
-		}
-
-		.slider:before {
-		  position: absolute;
-		  content: "";
-		  height: 16px;
-		  width: 16px;
-		  left: 4px;
-		  bottom: 4px;
-		  background-color: rgba(111, 110, 255, 1);
-		  -webkit-transition: .4s;
-		  transition: .4s;
-		}
-
-		input:checked + .slider {
-		  background-color: rgba(111, 110, 255, 0);
-		}
-
-		input:focus + .slider {
-		  box-shadow: 0 0 1px #2196F3;
-		}
-
-		input:checked + .slider:before {
-		  -webkit-transform: translateX(26px);
-		  -ms-transform: translateX(26px);
-		  transform: translateX(26px);
-		}
-
-		/* Rounded sliders */
-		.slider.round {
-		  border-radius: 30px;
-		  border: 1px solid rgba(255, 255, 255, 0.5);
-		}
-
-		.slider.round:before {
-		  border-radius: 50%;
-		}
-		.post {
-			position: absolute;
-			left: 30px;
-			top: calc(100vh - 64px);
-			font-family: Jost;
-			font-size: 14px;
-			line-height: 10px;
-			color: rgba(255, 255, 255, 0.5);
-		}
-		.item_body_left ::after {
-		  content: '';
-		}
-		.top-line::after {
-		  content: '\02C6';
-		  font-size: 25px;
-		  font-weight: bold;
-		  text-align: right;
-		  position: absolute;
-		  left: 250px;
-		}
-		.top-line::before {
-		  font-size: 14px;
-		  font-weight: bold;
-		  text-align: right;
-		  position: absolute;
-		  left: 250px;
-		}
-		.item_body_left #menu:checked ~ .top-line::after {
-		  content: '\25B2';
-		}
-	</style>
 </head>
 <header>
 	<div class="item_header">
 		<div class="item_header_left">
 			<img class="logo" src="img/logo.svg" alt="Логотип">
 		</div>
-		<div class="item_header_center">
-			<ul class="menu-top">
-				<li><a href="">FAQ</a></li>
-				<li><a href="">Поддержка</a></li>
-				<li><a href="" class="last-item-menu-top">Настройки</a></li>
-			</ul>
-		</div>
-		<div class="item_header_right">
-			<ul class="menu-top_user">
-				<li><a href="">15 готовых дз</a></li>
-				<li><a href="">18 лекций</a></li>
-				<li><a href="" style="color: rgba(255, 255, 255, 0.6);"><img class="icon_1" src="img/icon-1.svg" alt="Молния"><b>1200</b> часов</a></li>
-			</ul>
-			<img class="ava" src="img/ava.png" alt="Аватар">
-			<div class="menu-top_user_name">
-				<div>Вася Пупкин</div>
-				<div style="color: #24CB8D">● online</div>
+		<div class="item_header_2">
+			<div class="item_header_center">
+				<ul class="menu-top">
+					<li><a href="">FAQ</a></li>
+					<li><a href="">Поддержка</a></li>
+					<li><a href="" class="last-item-menu-top">Настройки</a></li>
+				</ul>
 			</div>
-			<div class="status">PRO</div>
+			<div class="item_header_right">
+				<ul class="menu-top_user">
+					<li><a href="">15 готовых дз</a></li>
+					<li><a href="">18 лекций</a></li>
+					<li><a href="" style="color: rgba(255, 255, 255, 0.6);"><img class="icon_1" src="img/icon-1.svg" alt="Молния"><b>1200</b> часов</a></li>
+				</ul>
+				<img class="ava" src="img/ava.png" alt="Аватар">
+				<div class="menu-top_user_name">
+					<div>Вася Пупкин</div>
+					<div style="color: #24CB8D">● online</div>
+				</div>
+				<div class="status">PRO</div>
+			</div>
 		</div>
 	</div>
 </header>
@@ -494,12 +76,14 @@
 				    </li>
 				</ul>
 				<hr style="border: 0.5px solid rgba(216, 216, 216, 0.1); margin: 0px;">
-				<p class="post">Получать рассылку</p>
-				<label class="switch">
-					<input type="checkbox" checked>
-					<span class="slider round"></span>
-				</label>
+				<div style="height: calc(100vh - 735px); display: flex; min-height: 80px;">
+					<p class="post">Получать рассылку</p>
+					<label class="switch">
+						<input type="checkbox" checked>
+						<span class="slider round"></span>
+					</label>
 				</div>
+			</div>
 			<div class="item_body_right">
 				<div class="content">
 					<div style="display: flex; margin-top: -10px;">
